@@ -8,18 +8,17 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git branch: 'main', 
-        url: 'https://github.com/taehee/source-maven-java-spring-hello-webapp.git'
+        git branch: 'main', url: 'https://github.com/taehee/source-maven-java-spring-hello-webapp.git'
       }
     }
     stage('Build') {
       steps {
-        sh 'mvn clean'
+        sh 'mvn clean package -DskipTests=true'
       }
     }
     stage('Test') {
       steps {
-        sh 'mvn package'
+        sh 'mvn test'
       }
     }
     stage('Deploy') {
