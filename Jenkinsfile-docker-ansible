@@ -1,5 +1,10 @@
 pipeline {
   agent none
+  
+  triggers {
+    //pollSCM('* * * * *')
+    githubPush()
+  }
 
   stages {
     stage('Checkout') {
