@@ -62,7 +62,7 @@ spec:
     }
     stage('Update K8s Manifests & Push') {
       environment {
-        githubUser = 'Taehee Youn'
+        githubUser = 'Youn TaeeHee'
         githubEmail = 'taehee.youn@gmail.com'
         githubId = 'taehee' 
         githubRepo = 'deploy-kube-object'
